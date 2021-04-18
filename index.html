@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" author="AgilePlaya" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Testing Glassmorphism</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
+    <script type="text/javascript" src="./js/three.js"></script>
     <div class="container">
         <div class="card">
             <div class="content">
@@ -15,37 +17,43 @@
                 <h3>Card One</h3>
                 <p>This is the description for card one. This here is just some sample text. Nothing important. Nothing
                     memorable.</p>
-                    <a href="#">Read More</a>
+                <a href="#">Read More</a>
             </div>
         </div>
         <div class="card">
             <div class="content">
                 <h2>02</h2>
-                <h3>Card One</h3>
+                <h3>Card Two</h3>
                 <p>This is the description for card one. This here is just some sample text. Nothing important. Nothing
                     memorable.</p>
-                    <a href="#">Read More</a>
+                <a href="#">Read More</a>
             </div>
         </div>
         <div class="card">
             <div class="content">
                 <h2>03</h2>
-                <h3>Card One</h3>
+                <h3>Card Three</h3>
                 <p>This is the description for card one. This here is just some sample text. Nothing important. Nothing
                     memorable.</p>
-                    <a href="#">Read More</a>
+                <a href="#">Read More</a>
             </div>
         </div>
     </div>
     <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelectorAll(".card"), {
+            reverse: true,
             max: 15,
             speed: 500,
             glare: true,
             "max-glare": 0.2,
-            easing:"cubic-bezier(.1,.5,.9,.5)",
+            easing: "cubic-bezier(.1,.5,.9,.5)",
             scale: 1.069,
+            gyroscope: true,
+            gyroscopeMinAngleX: -30,
+            gyroscopeMaxAngleX: 30,
+            gyroscopeMinAngleY: -30,
+            gyroscopeMaxAngleY: 30,
         });
     </script>
 </body>
