@@ -73,8 +73,6 @@ body::after {
 }
 
 .container .card:hover .content {
-    padding: 20px;
-    text-align: center;
     transform: translateY(0px);
     opacity: 1;
     transition: 0.5s;
@@ -85,20 +83,16 @@ body::after {
     top: -120px;
     right: 10px;
     font-size: 8em;
-    color: rgba(255, 255, 255, 0.069);
+    color: rgba(255, 255, 255, 0.1);
     pointer-events: none;
     z-index: 20;
     transition: 0.5s;
 }
 
 .container .card:hover .content h2{
-    position: absolute;
     top: -110px;
-    right: 10px;
     font-size: 8em;
     color: rgba(255, 255, 255, 0.069);
-    pointer-events: none;
-    z-index: 20;
     transition: 0.5s;
 }
 
@@ -107,14 +101,29 @@ body::after {
     color: white;
     z-index: 30;
     pointer-events: none;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.container .card:hover .content h3{
+    z-index: 40;
+    transform: translateY(0px);
+    transition: 0.5s;
 }
 
 .container .card .content p{
     font-size: 1em;
-    color: rgba(200, 200, 200, 1);
+    color: rgba(200, 200, 200, 0);
     z-index: 25;
     font-weight: 300;
     pointer-events: none;
+    transition: 0.5s;
+}
+
+.container .card:hover .content p{
+    color: rgba(200, 200, 200, 1);
+    z-index: 50;
+    transition: 0.5s;
 }
 
 .container .card .content a{
@@ -130,4 +139,11 @@ body::after {
     border-radius: 20px;
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-40px);
+    transition: 0.5s;
+}
+
+.container .card:hover .content a{
+    transform: translateY(20px);
+    transition: 0.5s;
 }

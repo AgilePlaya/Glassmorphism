@@ -37,6 +37,17 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 15,
+            speed: 500,
+            glare: true,
+            "max-glare": 0.2,
+            easing:"cubic-bezier(.1,.5,.9,.5)",
+            scale: 1.069,
+        });
+    </script>
 </body>
 
 </html>
