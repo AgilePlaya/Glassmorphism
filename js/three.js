@@ -18130,6 +18130,7 @@ function init() {
     );
     camera.position.z = 2000;
     camera.position.y = 4000;
+    camera.position.x = 0;
 
     scene = new THREE.Scene();
 
