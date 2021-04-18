@@ -9,15 +9,44 @@
 </head>
 
 <body>
+    <!-- <script>
+        var mouse = false;
+        function mouseStatus(n) {
+            mouse = n;
+        }
+        function changeColor() {
+            if (mouse) {
+                document.getElementById("cursor").style.webkitTransform = "scale(4)";
+                document.getElementById("cursor").style.Transform = "scale(4)";
+            }
+        }
+        // window.onload = initDivMouseOver;
+        // function initDivMouseOver()   {
+        //     var div = document.getElementById("about");
+        //     div.mouseIsOver = false;
+        //     div.onmouseover = function()   {
+        //         this.mouseIsOver = true;
+        //     };
+        //     div.onmouseout = function()   {
+        //         this.mouseIsOver = false;
+        //     }
+        //     div.onclick = function()   {
+        //         if (this.mouseIsOver)   {
+        //             document.getElementById("cursor").style.webkitTransform = "scale(4)";
+        //             document.getElementById("cursor").style.Transform = "scale(4)";
+        //         }
+        //     }
+        // }
+    </script> -->
     <script type="text/javascript" src="./js/three.js"></script>
     <div class="container">
-        <div class="page about">
-            <h1 class="text3d">Hello There</h1><h1 class="text3d-emoji">👋</h1><h1 class="text3d">,</h1>
+        <div class="page about" id="about">
+            <h1 class="text3d">Hello There</h1><h1 class="text3d-emoji" onmouseover="mouseStatus(true);" onmouseout="mouseStatus(false);">👋</h1><h1 class="text3d">,</h1>
             <h2 class="text3d">This is AgilePlaya</h2>
         </div>
 
         <div class="wrapper">
-            <div class="card">
+            <div class="card" onmouseover="mouseStatus(true);" onmouseout="mouseStatus(false);">
                 <div class="content">
                     <h1>01</h1>
                     <h3>Card One</h3>
@@ -26,7 +55,7 @@
                     <a href="#">Read More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onmouseover="mouseStatus(true);" onmouseout="mouseStatus(false);">
                 <div class="content">
                     <h1>02</h1>
                     <h3>Card Two</h3>
@@ -35,7 +64,7 @@
                     <a href="#">Read More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onmouseover="mouseStatus(true);" onmouseout="mouseStatus(false);">
                 <div class="content">
                     <h1>03</h1>
                     <h3>Card Three</h3>
@@ -60,6 +89,22 @@
             scale: 1.069,
         });
     </script>
+    <!-- <div class="cursor" id="cursor"></div> -->
+    <!-- <script>
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        })
+        document.addEventListener('mouseclick', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        })
+        document.addEventListener('mousedrag', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        })
+    </script> -->
 </body>
 
 </html>
