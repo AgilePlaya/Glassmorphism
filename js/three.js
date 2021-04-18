@@ -6693,7 +6693,7 @@ THREE.ParticleBasicMaterial = function (a) {
     THREE.Material.call(this);
     this.color = new THREE.Color(16777215);
     this.map = null;
-    this.size = 1;
+    this.size = 2;
     this.sizeAttenuation = !0;
     this.vertexColors = !1;
     this.fog = !0;
@@ -13515,7 +13515,7 @@ THREE.FontUtils = {
     face: "helvetiker",
     weight: "normal",
     style: "normal",
-    size: 150,
+    size: 500,
     divisions: 10,
     getFace: function () {
         return this.faces[this.face][this.weight][this.style];
@@ -18098,9 +18098,9 @@ THREE.ShaderSprite = {
     }
 };
 
-var SEPARATION = 400,
-    AMOUNTX = 30,
-    AMOUNTY = 20;
+var SEPARATION = 500,
+    AMOUNTX = 40,
+    AMOUNTY = 30;
 
 var container;
 var camera, scene, renderer;
@@ -18109,8 +18109,8 @@ var particles,
     particle,
     count = 0;
 
-var mouseX = 150,
-    mouseY = -2000;
+var mouseX = 500,
+    mouseY = -1000;
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
@@ -18213,8 +18213,8 @@ function animate() {
 }
 
 function render() {
-    camera.position.x += (mouseX - camera.position.x) * 0.005;
-    camera.position.y += (-mouseY - (camera.position.y * 0.05)) * 0.0015;
+    camera.position.x += (mouseX - camera.position.x) * 0.0075;
+    camera.position.y += (-mouseY - (camera.position.y * 0.05)) * 0.0075;
     camera.lookAt(scene.position);
 
     var i = 0;
@@ -18232,5 +18232,5 @@ function render() {
 
     renderer.render(scene, camera);
 
-    count += 0.1;
+    count += 0.05;
 }

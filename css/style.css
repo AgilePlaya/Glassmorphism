@@ -43,7 +43,7 @@ body::before {
     height: 100%;
     background: linear-gradient(rgba(255, 0, 0, 0.42), rgba(255, 105, 180,0.42));
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     clip-path: circle(30% at 90% 90%);
 }
 
@@ -55,6 +55,7 @@ body::after {
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 191, 255, 0.42), rgba(25, 25, 112, 0.42));
+    backdrop-filter: blur(2px);
     clip-path: circle(20% at 10% 10%);
 }
 
@@ -73,7 +74,7 @@ body::after {
     width: 300px;
     height: 400px;
     margin: 30px;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
@@ -82,10 +83,12 @@ body::after {
     align-items: center;
     border-top: 2px solid rgba(255, 255, 255, 0.42);
     border-left: 2px solid rgba(255, 255, 255, 0.42);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    transform: translateZ(10px);
+    transition: 0.5s;
 }
 
 .container .card .content {
@@ -99,6 +102,9 @@ body::after {
 .container .card:hover .content {
     transform: translateY(0px);
     opacity: 1;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transform: translateZ(10px);
     transition: 0.5s;
 }
 
@@ -117,6 +123,10 @@ body::after {
     top: -110px;
     font-size: 8em;
     color: rgba(255, 255, 255, 0.069);
+    
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transform: translateZ(10px);
     transition: 0.5s;
 }
 
@@ -131,7 +141,10 @@ body::after {
 
 .container .card:hover .content h3{
     z-index: 40;
-    transform: translateZ(20px);
+    
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transform: translateZ(40px);
     transform: translateY(0px);
     transition: 0.5s;
 }
@@ -148,7 +161,10 @@ body::after {
 .container .card:hover .content p{
     color: rgba(200, 200, 200, 1);
     z-index: 50;
-    transform: translateZ(10px);
+    
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transform: translateZ(40px);
     transition: 0.5s;
 }
 
@@ -167,7 +183,7 @@ body::after {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     pointer-events: none;
     transform: translateY(-40px);
-    transition: 0.5s;
+    transition: 0.35s;
 }
 
 .container .card:hover .content a{
@@ -180,10 +196,12 @@ body::after {
 
 .container .card:hover .content a:hover{
     pointer-events: all;
-    background: rgb(200, 200, 200);
-    color: rgb(0, 80, 255);
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    color: rgb(140, 200, 255);
+
     transform-style: preserve-3d;
     transform: translateZ(100px);
     transform: translateY(20px);
-    transition: 0.5s;
+    transition: 0.35s;
 }
