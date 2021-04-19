@@ -18098,9 +18098,9 @@ THREE.ShaderSprite = {
     }
 };
 
-var SEPARATION = 500,
-    AMOUNTX = 40,
-    AMOUNTY = 30;
+var SEPARATION = 690,
+    AMOUNTX = 20,
+    AMOUNTY = 21;
 
 var container;
 var camera, scene, renderer;
@@ -18224,10 +18224,10 @@ function render() {
         for (var iy = 0; iy < AMOUNTY; iy++) {
             particle = particles[i++];
             particle.position.y =
-                Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
+                Math.sin((ix + count) * 0.69) * 69 + Math.sin((iy + count) * 0.42) * 69;
             particle.scale.x = particle.scale.y =
-                (Math.sin((ix + count) * 0.3) + 1) * 2 +
-                (Math.sin((iy + count) * 0.5) + 1) * 2;
+                (Math.sin((ix + count) * 0.3) + 1) * 6.9 +
+                (Math.sin((iy + count) * 0.42) + 1) * 6.9;
         }
     }
 
