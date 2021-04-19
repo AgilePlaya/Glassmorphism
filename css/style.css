@@ -13,37 +13,101 @@
 }
 
 /*****************************************************************************************************************
-***********************************                Scrollbar Effect            ***********************************
+***********************************                Custom Scrollbar            ***********************************
 *****************************************************************************************************************/
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 30px;
     padding: 5%;
+    padding-bottom: 20%;
+    z-index: 100;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 15px rgb(40, 40, 40, 0.5);
-    -webkit-box-shadow: inset 0 0 15px rgba(40, 40, 40, 0.5); 
     -webkit-border-radius: 20px;
     border-radius: 20px;
-    padding-bottom: 5%;
+    padding: 5%;
+    padding-bottom: 8%;
+    background: transparent;
+    z-index: 100;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 20px;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
     border-radius: 20px;
-    background: rgba(80, 80, 80, 0.8);
-    box-shadow: inset 0 0 15px rgb(40, 40, 40, 0.5);
-    -webkit-box-shadow: inset 0 0 15px rgb(40, 40, 40, 0.5);
+    -webkit-border-radius: 20px;
+    border: 8px solid transparent;
+    background: rgb(0, 0, 0, 0.69);
+    background-clip: padding-box;
+    -webkit-box-shadow: inset 0 0 20px rgb(60, 60, 60, 0.5);
+    box-shadow: inset 0 0 20px rgb(60, 60, 60, 0.5);
+    padding: 5%;
+    padding-bottom: 20%;
+    z-index: 120;
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(40, 40, 40, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgb(0, 0, 0, 0.69);
+    border: 8px solid transparent;
+    background-clip: padding-box;
+    padding: 5%;
+    padding-bottom: 20%;
+    z-index: 120;
+}
+
+/*****************************************************************************************************************
+************************************                3D Text Effect            ************************************
+*****************************************************************************************************************/
+
+.text3d {
+    color: rgba(225, 225, 225, 0.9);
+    text-shadow: 
+        0px -1px 1px #ffffff,
+        0px 0.1vw 0 #696969,
+        0px 0.2vw 0 #636363,
+        0px 0.3vw 0 #5e5e5e,
+        0px 0.4vw 0 #585858,
+        0px 0.5vw 0 #525252,
+        0px 0.6vw 0 #4e4e4e,
+        0px 0.7vw 0 #4b4b4b,
+        0px 0.8vw 0 #474747,
+        0px 0.9vw 0 #444444,
+        0px 0.10vw 0 #3f3f3f, 
+        0px 0.11vw 0 #3b3b3b, 
+        0px 0.12vw 0 #383838, 
+        0px 0.13vw 0 #343434, 
+        0px 0.14vw 0 #2f2f2f,
+        0px 0.15vw 0 #2a2a2a,
+        0.1vw 1vw 0.5vw rgba(0, 0, 0, 0.9),
+        0.2vw 1.3vw 0.5vw rgba(0, 0, 0, 0.3),
+        0.4vw 1.7vw 0.8vw rgba(0, 0, 0, 0.5),
+        0.4vw 1.8vw 3.5vw rgba(0, 0, 0, 0.9);
+}
+
+.text3d-emoji {
+    color: rgba(225, 225, 225, 0.9);
+    text-shadow: 
+        0px -0.1vw 0.1vw #f09c3d,
+        0px 0.1vw 0 #8a581e,
+        0px 0.2vw 0 #80511c,
+        0px 0.3vw 0 #754b1b,
+        0px 0.4vw 0 #6d461a,
+        0px 0.5vw 0 #664219,
+        0px 0.6vw 0 #613f18,
+        0px 0.7vw 0 #5a3b17,
+        0px 0.8vw 0 #533716,
+        0px 0.9vw 0 #4d3215,
+        0px 0.10vw 0 #472e14, 
+        0px 0.11vw 0 #442d13, 
+        0px 0.12vw 0 #422c13, 
+        0px 0.13vw 0 #3d2912, 
+        0px 0.14vw 0 #382611,
+        0px 0.15vw 0 #332310,
+        0.1vw 1vw 0.5vw rgba(0, 0, 0, 0.9),
+        0.2vw 1.3vw 0.5vw rgba(0, 0, 0, 0.3),
+        0.4vw 1.7vw 0.8vw rgba(0, 0, 0, 0.5),
+        0.4vw 1.8vw 3.5vw rgba(0, 0, 0, 0.9);
 }
 
 /* body {
@@ -71,6 +135,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    height: max-content;
 }
 
 body::before {
@@ -107,98 +172,62 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100vw;
-    max-height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    width: 100vw;
+    height: 100vh;
     flex-wrap: wrap;
-    /* z-index: 20; */
-    overflow: auto;
     -webkit-overflow-scrolling: auto;
+    overflow: auto;
     z-index: 10;
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
 }
 
 .container .page {
     height: 100vh;
     width: 100vw;
+    align-content: center;
+}
+
+.page .about {
+    position: relative;
     text-align: left;
-    padding: 15%;
+    padding: 10vw;
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+    height: fit-content;
+    align-self: center;
+    vertical-align: middle;
 }
 
-.text3d {
-    color: rgba(225, 225, 225, 0.9);
-    text-shadow: 
-        0px -1px 1px #ffffff,
-        0px 1px 0 #696969,
-        0px 2px 0 #636363,
-        0px 3px 0 #5e5e5e,
-        0px 4px 0 #585858,
-        0px 5px 0 #525252,
-        0px 6px 0 #4e4e4e,
-        0px 7px 0 #4b4b4b,
-        0px 8px 0 #474747,
-        0px 9px 0 #444444,
-        0px 10px 0 #3f3f3f, 
-        0px 11px 0 #3b3b3b, 
-        0px 12px 0 #383838, 
-        0px 13px 0 #343434, 
-        0px 14px 0 #2f2f2f,
-        0px 15px 0 #2a2a2a,
-        2px 20px 5px rgba(0, 0, 0, 0.9),
-        5px 23px 5px rgba(0, 0, 0, 0.3),
-        8px 27px 8px rgba(0, 0, 0, 0.5),
-        8px 28px 35px rgba(0, 0, 0, 0.9);
-}
-
-.text3d-emoji {
-    color: rgba(225, 225, 225, 0.9);
-    text-shadow: 
-        0px -1px 1px #f09c3d,
-        0px 1px 0 #8a581e,
-        0px 2px 0 #80511c,
-        0px 3px 0 #754b1b,
-        0px 4px 0 #6d461a,
-        0px 5px 0 #664219,
-        0px 6px 0 #613f18,
-        0px 7px 0 #5a3b17,
-        0px 8px 0 #533716,
-        0px 9px 0 #4d3215,
-        0px 10px 0 #472e14, 
-        0px 11px 0 #442d13, 
-        0px 12px 0 #422c13, 
-        0px 13px 0 #3d2912, 
-        0px 14px 0 #382611,
-        0px 15px 0 #332310,
-        2px 20px 5px rgba(0, 0, 0, 0.9),
-        5px 23px 5px rgba(0, 0, 0, 0.3),
-        8px 27px 8px rgba(0, 0, 0, 0.5),
-        8px 28px 35px rgba(0, 0, 0, 0.9);
-}
-
-.container .page h1 {
+.page .about h1 {
     width: fit-content;
     color: rgba(225, 225, 225, 0.9);
-    font-size: 8em;
+    font-size: 8.5vw;
     font-weight: 690;
     display: inline;
 }
 
-.container .page h2 {
+.page .about h2 {
     width: fit-content;
     color: rgba(225, 225, 225, 0.9);
-    font-size: 6em;
+    font-size: 6.9vw;
     font-weight: 690;
 }
 
-.container .wrapper {
+.wrapper {
     position: relative;
     display: flex;
-    max-width: 100vw;
-    max-height: 100vh;
-    padding: 10%;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: max-content;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    padding: 5vw;
+    z-index: 20;
 }
 
-.container .card {
+.wrapper .card {
     position: relative;
     width: 300px;
     height: 400px;
@@ -219,7 +248,7 @@ body::after {
     transition: 0.5s;
 }
 
-.container .card .content {
+.wrapper .card .content {
     padding: 20px;
     text-align: center;
     
@@ -228,13 +257,13 @@ body::after {
     transition: 0.5s;
 }
 
-.container .card:hover .content {
+.wrapper .card:hover .content {
     transform: translate3d(0px, 0px, 50px);
     opacity: 1;
     transition: 0.5s;
 }
 
-.container .card .content h1{
+.wrapper .card .content h1{
     position: absolute;
     top: -120px;
     right: 10px;
@@ -245,14 +274,14 @@ body::after {
     /* z-index: 20; */
 }
 
-.container .card:hover .content h1{
+.wrapper .card:hover .content h1{
     top: -110px;
     font-size: 8em;
     color: rgba(255, 255, 255, 0.169);
     transition: 0.5s;
 }
 
-.container .card .content h3{
+.wrapper .card .content h3{
     font-size: 2em;
     color: white;
     /* z-index: 30; */
@@ -262,14 +291,14 @@ body::after {
     transition: 0.5s;
 }
 
-.container .card:hover .content h3{
+.wrapper .card:hover .content h3{
     /* z-index: 40; */
     /* transform: translateY(0px); */
     transform: translate3d(0px, 0px, 100px);
     transition: 0.5s;
 }
 
-.container .card .content p{
+.wrapper .card .content p{
     font-size: 1em;
     color: rgba(200, 200, 200, 0);
     /* z-index: 25; */
@@ -278,13 +307,13 @@ body::after {
     transition: 0.5s;
 }
 
-.container .card:hover .content p{
+.wrapper .card:hover .content p{
     color: rgba(200, 200, 200, 1);
     z-index: 50;
     transition: 0.5s;
 }
 
-.container .card .content a{
+.wrapper .card .content a{
     position: relative;
     display: inline-block;
     padding: 8px 20px;
@@ -303,14 +332,14 @@ body::after {
     transition: 0.5s;
 }
 
-.container .card:hover .content a{
+.wrapper .card:hover .content a{
     pointer-events: all;
     /* transform: translateY(20px); */
     transform: translate3d(0px, 10px, 50px);
     transition: 0.5s;
 }
 
-.container .card:hover .content a:hover{
+.wrapper .card:hover .content a:hover{
     pointer-events: all;
     background: rgba(255, 255, 255, 0);
     border: 1px solid white;
@@ -320,28 +349,13 @@ body::after {
     transition: 0.5s;
 }
 
-.container {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100vw;
-    max-width: 100vw;
-    flex-wrap: wrap;
-    /* z-index: 20; */
-    overflow: auto;
-    -webkit-overflow-scrolling: auto;
-    z-index: 10;
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-}
-
 .footer {
     position: relative;
     width: 100vw;
     height: auto;
     justify-content: center;
     align-items: center;
+    bottom: 0%;
     padding: 1%;
 }
 
